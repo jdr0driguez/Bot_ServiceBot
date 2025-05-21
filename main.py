@@ -1,4 +1,4 @@
-# main.py
+
 from config import EMAIL, PASSWORD, BASE_URL
 from login import login_selenium
 from download_csv import download_csv_selenium, obtener_ruta_documentos
