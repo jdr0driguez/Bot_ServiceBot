@@ -104,7 +104,7 @@ def download_csv_selenium(driver):
         ))
         driver.execute_script("arguments[0].click();", export_csv)
 
-        
+        time.sleep(7)
         nombre_archivo = CSV_FILENAME
 
         
