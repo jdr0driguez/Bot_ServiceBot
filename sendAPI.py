@@ -19,12 +19,12 @@ def obtener_token():
         token = response.json().get("token")
         token = response.json().get("token")
         if not token:
-            print(" No se encontró el token en la respuesta.")
+            print(" No se encontro el token en la respuesta.")
             return None
         print(" Token obtenido correctamente.")
         return token
     except Exception as e:
-        print(f" Error durante autenticación: {e}")
+        print(f" Error durante autenticacion: {e}")
         return None
 
 def enviar_csv(token):
