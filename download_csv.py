@@ -127,7 +127,7 @@ def download_csv_selenium(driver):
                 break
 
         if ventana_guardar:
-            print("✅ Ventana detectada:", ventana_guardar.window_text())
+            print(" Ventana detectada:", ventana_guardar.window_text())
             ventana_guardar.set_focus()
 
             
@@ -136,12 +136,12 @@ def download_csv_selenium(driver):
                 for idx, edit in enumerate(edits):
                     try:
                         edit.set_edit_text(ruta_archivo)
-                        print(f"✍️ Ruta escrita en Edit #{idx+1}")
+                        print(f" Ruta escrita en Edit #{idx+1}")
                         break
                     except Exception as e:
-                        print(f"❌ No se pudo escribir en Edit #{idx+1}: {e}")
+                        print(f" No se pudo escribir en Edit #{idx+1}: {e}")
             except Exception as e:
-                print("❌ No se encontraron campos Edit:", e)
+                print(" No se encontraron campos Edit:", e)
 
             
             try:
@@ -150,13 +150,13 @@ def download_csv_selenium(driver):
                 for btn in botones:
                     if "guardar" in btn.window_text().lower() or "save" in btn.window_text().lower():
                         btn.double_click_input()
-                        print("✅ Botón 'Guardar/Save' presionado")
+                        print(" Botón 'Guardar/Save' presionado")
                         guardado = True
                         break
                 if not guardado:
-                    print("❌ No se encontró botón Guardar/Save")
+                    print(" No se encontró botón Guardar/Save")
             except Exception as e:
-                print("❌ No se pudo hacer clic en Guardar:", e)
+                print(" No se pudo hacer clic en Guardar:", e)
 
             
             time.sleep(1)
@@ -171,14 +171,14 @@ def download_csv_selenium(driver):
                         for btn in botones_conf:
                             if "sí" in btn.window_text().lower() or "yes" in btn.window_text().lower():
                                 btn.click()
-                                print("🟢 Confirmación de sobrescritura aceptada")
+                                print(" Confirmación de sobrescritura aceptada")
                                 break
                     except Exception as e:
-                        print("❌ No se pudo confirmar sobrescritura:", e)
+                        print(" No se pudo confirmar sobrescritura:", e)
 
         else:
-            print("❌ No se encontró la ventana 'Guardar como' / 'Save As'")
+            print(" No se encontró la ventana 'Guardar como' / 'Save As'")
 
     except Exception as e:
-        print(f"❌ Error durante la automatización: {e}")
+        print(f" Error durante la automatización: {e}")
 
