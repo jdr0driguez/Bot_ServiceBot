@@ -21,7 +21,7 @@ def login_selenium(driver, email, password, base_url):
 
         
         wait.until(EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'GEMELO_DIGITAL')]")))
-        print("✅ Login exitoso: menú GEMELO_DIGITAL detectado")
+        print(" Login exitoso: menú GEMELO_DIGITAL detectado")
 
     except Exception as e:
-        raise Exception(f"❌ Login fallido: {e}")
+        raise Exception(f" Login fallido: {e}")
