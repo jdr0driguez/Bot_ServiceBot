@@ -21,7 +21,7 @@ def obtener_token():
         if not token:
             print(" No se encontró el token en la respuesta.")
             return None
-        print("✅ Token obtenido correctamente.")
+        print(" Token obtenido correctamente.")
         return token
     except Exception as e:
         print(f" Error durante autenticación: {e}")
@@ -40,8 +40,8 @@ def enviar_csv(token):
             files = {"datos": f}
             response = requests.post(UPLOAD_URL, headers=headers, data=form_data, files=files, verify=False)
             response.raise_for_status()
-            print("✅ Archivo enviado exitosamente.")
-            print("📄 Respuesta del servidor:")
+            print(" Archivo enviado exitosamente.")
+            print(" Respuesta del servidor:")
             print(response.text)
     except FileNotFoundError:
         print(f" El archivo '{CSV_FILENAME}' no fue encontrado.")
