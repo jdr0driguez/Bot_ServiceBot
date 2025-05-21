@@ -1,4 +1,4 @@
-# sendAPI.py
+
 
 from config import USERNAME, PASSWORDWISER, UNIT_ID, BASE_URLWISER, CSV_FILENAME, CSV_HEADERS_JSON
 import requests
@@ -19,12 +19,12 @@ def obtener_token():
         token = response.json().get("token")
         token = response.json().get("token")
         if not token:
-            print("❌ No se encontró el token en la respuesta.")
+            print(" No se encontró el token en la respuesta.")
             return None
         print("✅ Token obtenido correctamente.")
         return token
     except Exception as e:
-        print(f"❌ Error durante autenticación: {e}")
+        print(f" Error durante autenticación: {e}")
         return None
 
 def enviar_csv(token):
@@ -44,12 +44,12 @@ def enviar_csv(token):
             print("📄 Respuesta del servidor:")
             print(response.text)
     except FileNotFoundError:
-        print(f"❌ El archivo '{CSV_FILENAME}' no fue encontrado.")
+        print(f" El archivo '{CSV_FILENAME}' no fue encontrado.")
     except Exception as e:
-        print(f"❌ Error al enviar archivo: {e}")
+        print(f" Error al enviar archivo: {e}")
 
 def enviar_archivo_api():
-    print("\n🔐 Autenticando y enviando archivo por API...")
+    print("\n Autenticando y enviando archivo por API...")
     token = obtener_token()
     if token:
         enviar_csv(token)
