@@ -154,7 +154,7 @@ def download_csv_selenium(driver):
                         guardado = True
                         break
                 if not guardado:
-                    print(" No se encontró botón Guardar/Save")
+                    print(" No se encontro boton Guardar/Save")
             except Exception as e:
                 print(" No se pudo hacer clic en Guardar:", e)
 
@@ -171,14 +171,14 @@ def download_csv_selenium(driver):
                         for btn in botones_conf:
                             if "sí" in btn.window_text().lower() or "yes" in btn.window_text().lower():
                                 btn.click()
-                                print(" Confirmación de sobrescritura aceptada")
+                                print(" Confirmacion de sobrescritura aceptada")
                                 break
                     except Exception as e:
                         print(" No se pudo confirmar sobrescritura:", e)
 
         else:
-            print(" No se encontró la ventana 'Guardar como' / 'Save As'")
+            print(" No se encontro la ventana 'Guardar como' / 'Save As'")
 
     except Exception as e:
-        print(f" Error durante la automatización: {e}")
+        print(f" Error durante la automatizacion: {e}")
 
